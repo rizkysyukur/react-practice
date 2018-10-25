@@ -17,7 +17,7 @@ function todos(state = [], action){
   switch (action.type) {
     case ADD_TODO:
     return [
-      ..state,
+      ...state,
       todo(undefined, action)
     ]
     default:
@@ -25,7 +25,7 @@ function todos(state = [], action){
   }
 }
 
-const totoApp = combineReducers({
+const todoApp = combineReducers({
   todos
 })
 
