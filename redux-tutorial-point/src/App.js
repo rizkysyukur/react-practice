@@ -7,11 +7,12 @@ import TodoList from './components/TodoList.js';
 
 class App extends Component {
   render() {
-    const { dispatch, visibleTodos } = this.props;
+    const { dispatch, todos } = this.props;
+    console.log(dispatch);
     return (
       <div>
         <AddTodo onAddClick = {text => dispatch(addTodo(text))} />
-        <TodoList todos = {visibleTodos} />
+        <TodoList todos = {todos} />
       </div>
     );
   }
@@ -19,7 +20,7 @@ class App extends Component {
 
 function select(state){
   return {
-      visibleTodos: state.todos
+      todos: state.todos
   }
 }
 
