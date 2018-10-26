@@ -5,7 +5,7 @@ let nextTodo = 0;
 export function addTodo(text){
   return {
     type: ADD_TODO,
-    id: nextTodo,
+    id: nextTodo++,
     text
   };
 }

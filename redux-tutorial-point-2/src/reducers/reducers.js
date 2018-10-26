@@ -13,7 +13,7 @@ function todo(state, action){
   }
 }
 
-function todo(state = [], action) {
+function todos(state = [], action) {
   switch (action.type) {
     case ADD_TODO:
       return [
