@@ -14,10 +14,8 @@ class App extends React.Component {
     return (
       <div>
         <h1>{this.state.header}</h1>
-        <h2>{this.state.content}</h2>
+        <h2>{this.state.header}</h2>
       </div>
     );
   }
 }
-
-export default App;
