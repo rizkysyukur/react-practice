@@ -1,25 +1,46 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+class App extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      data: [
+        {
+          component: 'First...',
+          id: 1
+        },
+        {
+          component: 'Second...',
+          id: 2
+        },
+        {
+          component: 'Third...',
+          id: 3
+        },
+      ]
+    }
+  }
+
+  render(){
+    return(
+      <div>
+        <div>
+          {
+            this.state.data.map((dynamicComponent, i) =>
+            <Content key = {i} componentData = {dynamicComponent} />
+          )}
+        </div>
+      </div>
+    );
+  }
+}
+
+class Content extends Component{
+  render(){
+    return(
+      <div>
+      <div>{this.props.componentData.component}</div>
+      <div>{this.props.componentData.id}</div>
       </div>
     );
   }
